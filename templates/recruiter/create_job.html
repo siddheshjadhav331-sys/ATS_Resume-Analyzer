@@ -1,0 +1,29 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Create Job
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Create Job</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button
+        type="submit"
+        class="btn">
+            Create Job
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

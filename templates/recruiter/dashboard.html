@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Recruiter Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1>
+    Welcome {{ request.user.username }}
+</h1>
+
+<p>
+    Recruiter Dashboard
+</p>
+
+<div class="stats">
+
+    <div class="card">
+        <h2>Create Job</h2>
+        <p>Create new job postings.</p>
+
+        <a href="/create-job/" class="btn">
+            Create Job
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>My Jobs</h2>
+        <p>View all posted jobs.</p>
+
+        <a href="/jobs/" class="btn">
+            View Jobs
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Applicants</h2>
+        <p>Review candidate applications.</p>
+    </div>
+
+</div>
+
+{% endblock %}

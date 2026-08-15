@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Candidate Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome {{ request.user.username }}</h1>
+
+<div class="card">
+
+    <h2>
+        ATS Score
+    </h2>
+
+    <canvas id="atsChart"></canvas>
+
+</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+
+const atsScore = parseInt("{{ score }}");
+const remaining = 100 - atsScore;
+
+new Chart(
+    document.getElementById('atsChart'),
+    {
+        type: 'doughnut',
+        data: {
+            labels: ['Matched', 'Remaining'],
+            datasets: [{
+                data: [atsScore, remaining]
+            }]
+        }
+    }
+);
+
+</script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Applicants
+{% endblock %}
+
+{% block content %}
+
+<h1>Applicants</h1>
+
+{% for application in applications %}
+
+<div class="card">
+
+    <h3>
+        {{ application.candidate.username }}
+    </h3>
+
+    <p>
+        Applied for:
+        {{ application.job.title }}
+    </p>
+
+    <p>
+        {{ application.applied_at }}
+    </p>
+
+</div>
+
+{% empty %}
+
+<p>No applicants yet.</p>
+
+{% endfor %}
+
+{% endblock %}

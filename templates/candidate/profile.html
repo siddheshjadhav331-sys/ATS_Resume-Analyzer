@@ -1,0 +1,108 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+
+<h1>My Profile</h1>
+
+<div class="card">
+
+    <h3>Username</h3>
+
+    <p>{{ request.user.username }}</p>
+
+</div>
+
+<div class="card">
+
+    <h3>Email</h3>
+
+    <p>{{ request.user.email }}</p>
+
+</div>
+
+<div class="card">
+
+    <h3>Latest ATS Score</h3>
+
+    <p>{{ score }}%</p>
+
+</div>
+
+<div class="card">
+
+    <h3>Applied Jobs</h3>
+
+    <p>{{ applications.count }}</p>
+
+</div>
+
+<div class="card">
+
+    <h3>Job Applications</h3>
+
+    <ul>
+
+    {% for application in applications %}
+
+        <li>
+            {{ application.job.title }}
+            ({{ application.ats_score }}%)
+        </li>
+
+    {% empty %}
+
+        <li>No applications yet.</li>
+
+    {% endfor %}
+
+    </ul>
+
+</div>
+
+<div class="card">
+
+    <h3>
+        Uploaded Resumes
+    </h3>
+
+    {% if resumes %}
+
+        <ul>
+
+        {% for resume in resumes %}
+
+            <li>
+
+                <a
+                href="{{ resume.resume_file.url }}"
+                target="_blank"
+                >
+                    View Resume
+                </a>
+
+                -
+
+                {{ resume.uploaded_at }}
+
+            </li>
+
+        {% endfor %}
+
+        </ul>
+
+    {% else %}
+
+        <p>
+            No resumes uploaded yet.
+        </p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+

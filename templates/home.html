@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+AI Resume Analyzer
+{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>
+        ATS Resume Analyzer
+    </h1>
+
+    <p>
+        Upload resumes, calculate ATS scores,
+        analyze skills and rank candidates.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="{% url 'login' %}" class="btn">
+            Login
+        </a>
+
+        <a href="{% url 'register' %}" class="btn btn-secondary">
+            Register
+        </a>
+
+    </div>
+
+</div>
+
+<div class="stats">
+
+    <div class="card">
+        <h2>100+</h2>
+        <p>Resumes Analyzed</p>
+    </div>
+
+    <div class="card">
+        <h2>95%</h2>
+        <p>ATS Accuracy</p>
+    </div>
+
+    <div class="card">
+        <h2>50+</h2>
+        <p>Jobs Posted</p>
+    </div>
+
+</div>
+
+<div class="features">
+
+    <div class="card">
+        <h3>Resume Upload</h3>
+        <p>Upload PDF resumes securely.</p>
+    </div>
+
+    <div class="card">
+        <h3>ATS Analysis</h3>
+        <p>Generate resume scores automatically.</p>
+    </div>
+
+    <div class="card">
+        <h3>Candidate Ranking</h3>
+        <p>Compare applicants efficiently.</p>
+    </div>
+
+</div>
+
+{% endblock %}

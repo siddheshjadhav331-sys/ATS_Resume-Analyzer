@@ -1,0 +1,51 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Resume Analysis
+{% endblock %}
+
+{% block content %}
+
+<h1>Resume Analysis</h1>
+
+<div class="card">
+
+    <h2>
+        ATS Score: {{ score }}%
+    </h2>
+
+</div>
+
+<div class="card">
+
+    <h2>Detected Skills</h2>
+
+    <ul>
+
+        {% for skill in skills %}
+
+            <li>{{ skill }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+<div class="card">
+
+    <h2>Missing Skills</h2>
+
+    <ul>
+
+        {% for skill in missing_skills %}
+
+            <li>{{ skill }}</li>
+
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+{% endblock %}

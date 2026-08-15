@@ -1,0 +1,29 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+Rankings
+{% endblock %}
+
+{% block content %}
+
+<h1>Candidate Rankings</h1>
+
+{% for application in applications %}
+
+<div class="card">
+    <h3>{{ application.candidate.username }}</h3>
+
+    <p>Job: {{ application.job.title }}</p>
+
+    <p>ATS Score: {{ application.ats_score }}%</p>
+</div>
+
+{% empty %}
+
+<div class="card">
+    <p>No rankings available.</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}
