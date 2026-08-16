@@ -2,6 +2,7 @@
 
     <div class="navbar-brand">
 
+        {% if user.is_authenticated %}
         <button
             class="menu-toggle"
             id="menuToggle"
@@ -10,6 +11,7 @@
         >
             ☰
         </button>
+        {% endif %}
 
         <h2>ATS Resume Analyzer</h2>
 
