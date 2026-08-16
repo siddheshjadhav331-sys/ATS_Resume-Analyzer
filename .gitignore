@@ -1,0 +1,20 @@
+# Environment / secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Database
+db.sqlite3
+db_new_backup.sqlite3
+
+# User uploads
+media/
+
+# IDE
+.vscode/
+
+# Accidental local folder
+.gitiignore/
