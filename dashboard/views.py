@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from resumes.models import Resume
 
-from resumes.models import Resume
-
 @login_required
 def candidate_dashboard(request):
 
