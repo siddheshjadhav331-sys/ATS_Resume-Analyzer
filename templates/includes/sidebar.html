@@ -1,85 +1,38 @@
-<div
-style="
-width:250px;
-background:#1e293b;
-padding:20px;
-min-height:100vh;
-"
->
-{% if user.is_authenticated %}
-  {% if request.user.role == 'candidate' %}
+<aside class="sidebar" id="sidebar">
 
-    <a href="/candidate-dashboard/"
-    style="display:block;color:white;padding:12px;">
-        Dashboard
-    </a>
+    {% if user.is_authenticated %}
 
-    <a href="/upload-resume/"
-    style="display:block;color:white;padding:12px;">
-        Upload Resume
-    </a>
+        {% if request.user.role == 'candidate' %}
 
-    <a href="/analysis/"
-    style="display:block;color:white;padding:12px;">
-        Analysis
-    </a>
-    
-    <a href="/candidate-jobs/"
-    style="display:block;color:white;padding:12px;">
-        Available Jobs
-    </a>
-    
-    <a href="/profile/"
-    style="display:block;color:white;padding:12px;">
-        Profile
-    </a>
+            <a href="/candidate-dashboard/">Dashboard</a>
+            <a href="/upload-resume/">Upload Resume</a>
+            <a href="/analysis/">Analysis</a>
+            <a href="/candidate-jobs/">Available Jobs</a>
+            <a href="/profile/">Profile</a>
 
-  {% elif request.user.role == 'recruiter' %}
+        {% elif request.user.role == 'recruiter' %}
 
-    <a href="/recruiter-dashboard/"
-    style="display:block;color:white;padding:12px;">
-        Dashboard
-    </a>
+            <a href="/recruiter-dashboard/">Dashboard</a>
+            <a href="/create-job/">Create Job</a>
+            <a href="/jobs/">My Jobs</a>
+            <a href="/applicants/">Applicants</a>
+            <a href="/rankings/">Rankings</a>
 
-    <a href="/create-job/"
-    style="display:block;color:white;padding:12px;">
-        Create Job
-    </a>
+        {% elif request.user.role == 'admin' %}
 
-    <a href="/jobs/"
-    style="display:block;color:white;padding:12px;">
-        My Jobs
-    </a>
+            <a href="/admin-dashboard/">Dashboard</a>
+            <a href="/admin/">Django Admin</a>
 
-    <a href="/applicants/"
-    style="display:block;color:white;padding:12px;">
-      Applicants
-    </a>
+        {% endif %}
 
-    <a href="/rankings/"
-    style="display:block;color:white;padding:12px;">
-      Rankings
-    </a>
-    
-  {% elif request.user.role == 'admin' %}
+        <hr>
 
-    <a href="/admin-dashboard/"
-    style="display:block;color:white;padding:12px;">
-        Dashboard
-    </a>
+        <a href="/logout/" class="logout-link">
+            Logout
+        </a>
 
-    <a href="/admin/"
-    style="display:block;color:white;padding:12px;">
-        Django Admin
-    </a>
+    {% endif %}
 
-  {% endif %}
+</aside>
 
-    <hr style="margin:15px 0;">
-
-    <a href="/logout/"
-    style="display:block;color:#ef4444;padding:12px;">
-        Logout
-    </a>
-{% endif %}
-</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>

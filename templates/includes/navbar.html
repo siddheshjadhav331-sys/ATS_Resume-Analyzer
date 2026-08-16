@@ -1,33 +1,25 @@
-<nav
-style="
-height:70px;
-background:#0f172a;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 30px;
-"
->
+<nav class="navbar">
 
-    <h2 style="color:white;">
-        ATS Resume Analyzer
-    </h2>
+    <div class="navbar-brand">
+        <button class="menu-toggle" id="menuToggle" type="button">
+            ☰
+        </button>
 
-    <div>
+        <h2>ATS Resume Analyzer</h2>
+    </div>
 
-        <span
-        style="
-        color:white;
-        margin-right:20px;
-        "
-        >
-            Welcome
-            {{ request.user.username }}
+    <div class="navbar-right">
+
+        {% if user.is_authenticated %}
+        <span class="welcome-text">
+            Welcome {{ request.user.username }}
         </span>
+        {% endif %}
 
         <button
-        id="themeToggle"
-        class="btn"
+            id="themeToggle"
+            class="btn theme-btn"
+            type="button"
         >
             🌙 Theme
         </button>
