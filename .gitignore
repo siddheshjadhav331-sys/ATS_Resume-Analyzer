@@ -1,13 +1,32 @@
+# Environment
 .env
-db.sqlite3
-db_new_backup.sqlite3
+.env.*
 
+# Django / Python
 venv/
-
+.venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
 
+# Django local settings
+settings.py
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+
+# User-uploaded / generated files
 media/
 staticfiles/
 
+# Logs
+*.log
+
+# IDE
 .vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
